@@ -10,16 +10,31 @@ export default class Products extends Component {
     products: []
   }
 
-  fetchProducts = () => {
+  fetchProducts = async () => {
     // add call to AWS API Gateway to fetch products here
     // then set them in state
+
+    try {
+      const res = await axios.get(`${config.api.invokeUrl}/products`);
+      const products = res.data.Items;
+      console.log(res);
+      this.setState({ products: products });
+       
+    }catch (err) {
+      console.log(`An error has occured: ${err}`);
+    }
+
   }
 
+  
   componentDidMount = () => {
     this.fetchProducts();
   }
 
+  
+
   render() {
+    console.log(this.state.products);
     return (
       <Fragment>
         <section className="section">
