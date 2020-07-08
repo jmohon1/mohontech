@@ -6,5 +6,8 @@
     "REGION": "us-west-2",
     "USER_POOL_ID": "us-west-2_flCJaoDig",
     "APP_CLIENT_ID": "159ufjrihgehb67sn373aotli7"
+  },
+  "api2": { 
+    "invokeUrl": "https://ex4y5xw0j4.execute-api.us-west-2.amazonaws.com/Prod"
   }
 }

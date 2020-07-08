@@ -21,7 +21,7 @@ export default class ProductAdmin extends Component {
         "id": id,
         "productname": this.state.newproduct.productname
       };
-      await axios.post(`${config.api.invokeUrl}/products/${id}`, params);
+      await axios.post(`${config.api2.invokeUrl}/products/${id}`, params);
       this.setState({ products: [...this.state.products, this.state.newproduct] });
       this.setState({ newproduct: { "productname": "", "id": "" }});
     }catch (err) {
@@ -36,7 +36,7 @@ export default class ProductAdmin extends Component {
         "id": id,
         "productname": name
       };
-      await axios.patch(`${config.api.invokeUrl}/products/${id}`, params);
+      await axios.patch(`${config.api2.invokeUrl}/products/${id}`, params);
       const productToUpdate = [...this.state.products].find(product => product.id === id);
       const updatedProducts = [...this.state.products].filter(product => product.id !== id);
       productToUpdate.productname = name;
@@ -51,7 +51,7 @@ export default class ProductAdmin extends Component {
     event.preventDefault();
     // add call to AWS API Gateway delete product endpoint here
     try {
-      await axios.delete(`${config.api.invokeUrl}/products/${id}`);
+      await axios.delete(`${config.api2.invokeUrl}/products/${id}`);
       const updatedProducts = [...this.state.products].filter(product => product.id !== id);
       this.setState({products: updatedProducts});
     }catch (err) {
@@ -63,8 +63,8 @@ export default class ProductAdmin extends Component {
     // add call to AWS API Gateway to fetch products here
     // then set them in state
     try {
-      const res = await axios.get(`${config.api.invokeUrl}/products`);
-      const products = res.data;
+      const res = await axios.get(`${config.api2.invokeUrl}/products`);
+      const products = res.data.Items;
       this.setState({ products: products });
     } catch (err) {
       console.log(`An error has occurred: ${err}`);

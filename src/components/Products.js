@@ -15,7 +15,7 @@ export default class Products extends Component {
     // then set them in state
     try {
       const res = await axios.get(`${config.api.invokeUrl}/products`);
-      const products = res.data;
+      const products = res.data.Items;
       this.setState({ products: products });
     } catch (err) {
       console.log(`An error has occurred: ${err}`);
