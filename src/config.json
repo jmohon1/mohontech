@@ -1,13 +1,10 @@
 {
   "api": { 
-    "invokeUrl": "https://5bltcq602h.execute-api.us-west-2.amazonaws.com/prod"
+    "invokeUrl": "https://ex4y5xw0j4.execute-api.us-west-2.amazonaws.com/Prod"
   },
   "cognito": {
     "REGION": "us-west-2",
-    "USER_POOL_ID": "us-west-2_flCJaoDig",
-    "APP_CLIENT_ID": "159ufjrihgehb67sn373aotli7"
-  },
-  "api2": { 
-    "invokeUrl": "https://ex4y5xw0j4.execute-api.us-west-2.amazonaws.com/Prod"
+    "USER_POOL_ID": "us-west-2_JYROQ1gTR",
+    "APP_CLIENT_ID": "7i4lnslmvl3p68alnoe0218596"
   }
 }
