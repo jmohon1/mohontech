@@ -21,7 +21,7 @@ export default class ProductAdmin extends Component {
         "id": id,
         "productname": this.state.newproduct.productname
       };
-      await axios.post(`${config.api2.invokeUrl}/products/${id}`, params);
+      await axios.post(`${config.api.invokeUrl}/products/${id}`, params);
       this.setState({ products: [...this.state.products, this.state.newproduct] });
       this.setState({ newproduct: { "productname": "", "id": "" }});
     }catch (err) {
